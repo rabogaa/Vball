@@ -1,0 +1,10 @@
+/.idea
+/Temp/
+*.sln
+/Vball/
+/obj/
+Assembly-CSharp-Editor-firstpass.csproj
+Assembly-CSharp.csproj
+/ProjectSettings/
+/UnityPackageManager/
+/Library/
