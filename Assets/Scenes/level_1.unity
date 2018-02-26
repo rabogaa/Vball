@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44658017, g: 0.49641502, b: 0.57482153, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657868, g: 0.49641263, b: 0.57481706, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -295,7 +295,7 @@ GameObject:
   - component: {fileID: 1558287686}
   - component: {fileID: 1558287691}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -313,6 +313,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _speed: 5
+  ball: {fileID: 0}
+  gameover: 0
 --- !u!23 &1558287687
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -510,7 +512,7 @@ Camera:
     height: 1
   near clip plane: 1
   far clip plane: 200
-  field of view: 66.465866
+  field of view: 93
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -521,9 +523,9 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
-  m_AllowMSAA: 0
-  m_AllowDynamicResolution: 0
+  m_HDR: 0
+  m_AllowMSAA: 1
+  m_AllowDynamicResolution: 1
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -535,7 +537,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1909258732}
   m_LocalRotation: {x: 0.21056497, y: 0.21356486, z: -0.047196984, w: 0.9527985}
-  m_LocalPosition: {x: -6.91, y: 7.0642, z: -14.099995}
+  m_LocalPosition: {x: -3.6, y: 4, z: -8.3}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -552,6 +554,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfa851d9c5d192f4eb1bc9592612fcf0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _lerpRate: 1
+  _ball: {fileID: 1558287691}
 --- !u!1 &2038373257
 GameObject:
   m_ObjectHideFlags: 0

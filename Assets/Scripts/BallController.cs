@@ -4,27 +4,27 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     [SerializeField] private float _speed = 0f;
-    private Rigidbody _ball;
+    public Rigidbody ball;
     private bool _started;
-    private bool _gameover;
+    public bool gameover;
 
     void SwitchDirection()
     {
-        if (_ball.velocity.x > 0)
+        if (ball.velocity.x > 0)
         {
-            _ball.velocity = new Vector3(0, 0, _speed);
+            ball.velocity = new Vector3(0, 0, _speed);
         }
-        else if (_ball.velocity.z > 0)
+        else if (ball.velocity.z > 0)
         {
-            _ball.velocity = new Vector3(_speed, 0, 0);
+            ball.velocity = new Vector3(_speed, 0, 0);
         }
     }
 
     void Start()
     {
-        _gameover = false;
+        gameover = false;
         _started = false;
-        _ball = GetComponent<Rigidbody>();
+        ball = GetComponent<Rigidbody>();
 
         if (_speed < 1)
         {
@@ -38,15 +38,15 @@ public class BallController : MonoBehaviour
         {
             if (Input.GetMouseButtonDown(0))
             {
-                _ball.velocity = new Vector3(_speed, 0, 0);
+                ball.velocity = new Vector3(_speed, 0, 0);
                 _started = true;
             }
         }
 
-        _gameover = !Physics.Raycast(transform.position, Vector3.down, 100f);
+        gameover = !Physics.Raycast(transform.position, Vector3.down, 100f);
         Debug.DrawRay(transform.position, Vector3.down, Color.red);
 
-        if (!_gameover)
+        if (!gameover)
         {
             if (Input.GetMouseButtonDown(0))
             {
@@ -55,7 +55,7 @@ public class BallController : MonoBehaviour
         }
         else
         {
-            _ball.velocity = new Vector3(0, -25f, 0);
+            ball.velocity = new Vector3(0, -25f, 0);
         }
     }
 }
