@@ -46,6 +46,8 @@ public class BallController : MonoBehaviour
         gameover = !Physics.Raycast(transform.position, Vector3.down, 100f);
         Debug.DrawRay(transform.position, Vector3.down, Color.red);
 
+        Camera.main.GetComponent<CameraController>().gameover = gameover;
+
         if (!gameover)
         {
             if (Input.GetMouseButtonDown(0))

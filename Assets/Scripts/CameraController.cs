@@ -2,7 +2,7 @@
 
 public class CameraController : MonoBehaviour
 {
-    private bool _gameover;
+    public bool gameover { get; set; }
 
     [SerializeField]
     private float _lerpRate;
@@ -15,14 +15,14 @@ public class CameraController : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        _gameover = false;
+        gameover = false;
         offset = _ball.transform.position - transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!_gameover)
+        if (!gameover)
         {
             Follow();
         }
@@ -30,6 +30,6 @@ public class CameraController : MonoBehaviour
 
     void Follow()
     {
-        transform.position = Vector3.Lerp(transform.position, _ball.transform.position-offset, _lerpRate * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, _ball.transform.position - offset, _lerpRate * Time.deltaTime);
     }
 }
